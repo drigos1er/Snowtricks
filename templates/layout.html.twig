@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+
+    {# Bootstrap Core CSS
+    <link href="{{ asset('build/css/app.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('build/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">#}
+        <link href="/Sitecommunautaire/public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/Sitecommunautaire/public/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/Sitecommunautaire/public/css/animate.css" rel="stylesheet" />
+        <link href="/Sitecommunautaire/public/css/style.css" rel="stylesheet">
+
+        <link href="/Sitecommunautaire/public/css/default.css" rel="stylesheet">
+        <style>
+            .carousel-page
+            {
+                width:100%;
+                height:400px;
+                background-color:#5f666d;
+                color:white;
+            }
+
+
+            .flex{
+                display: flex;
+                flex-wrap: wrap;
+
+
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .flex img {
+                background-repeat: no-repeat; background-size: 100%;
+            }
+
+
+            .flex div
+            {
+                width:300px;
+
+                border: solid 1px black;
+                height: 200px;
+                overflow: hidden;
+                position: relative;
+                /*
+
+ padding-bottom: 56.25%;
+                box-shadow: 0 10px 60px 0 rgba(0,0,0,0.2);*/
+
+            }
+        </style>
+    {% endblock %}
+
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Preloader -->
+<div id="preloader">
+    <div id="load"></div>
+</div>
+
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="{{ path('sitecom_homepage') }} ">
+                <h1>SNOWTRICKS</h1>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="{%if current_menu==''  %}active{% endif %}"><a href="{{ path('sitecom_homepage') }}">Accueil</a></li>
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Figures <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="{%if current_menu=='showtrick'  %}active{% endif %}"><a href="{{ path('sitecom_listtrick',{'page':1}) }}">Nos Figures</a></li>
+                        <li class="{%if current_menu=='addtrick'  %}active{% endif %}"><a href="{{ path('sitecom_addtrick')}}">Créer une Figure</a></li>
+
+                    </ul>
+                </li>
+
+
+
+
+                <li><a href="{{ path('sitecom_contactpage') }}">Contact</a></li>
+                {%if not app.user  %}
+
+
+                    <li class="{%if current_menu=='login'  %}active{% endif %}"><a href="{{ path('security_login') }}">Se Connecter</a></li>
+
+                {% else %}
+
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user.username }} <b class="caret"></b><img src="/Sitecommunautaire/public/images/users/{{ app.user.picture}}" alt="" class="img-responsive img-circle"  style="height: 40px; width: 40px;"/></a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="{{ path('sitecom_profilepage',{'id':app.user.id}) }}">Mon Profil</a></li>
+                            <li><a href="{{ path('security_logout') }}">Deconnexion</a></li>
+
+                        </ul>
+                    </li>
+
+                {% endif %}
+
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+{% block body %}
+{% endblock %}
+
+{% block javascripts %}
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+
+                <p>&copy;2019 SnowTricks.Tous droits Réservés.</p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+  {# <script src="{{ asset('build/js/jquery.min.js') }}"></script>
+   <script src="{{ asset('build/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('build/js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('build/js/jquery.scrollTo.js') }}"></script>
+    <script src="{{ asset('build/js/wow.min.js') }}"></script>
+    <script src="{{ asset('build/js/custom.js') }}"></script>#}
+
+<script src=""></script>
+
+    <script src="/Sitecommunautaire/public/js/jquery-1.10.2.js"></script>
+    <script src="/Sitecommunautaire/public/js/bootstrap.min.js"></script>
+<script src="/Sitecommunautaire/public/js/jquery.easing.min.js"></script>
+<script src="/Sitecommunautaire/public/js/jquery.scrollTo.js"></script>
+<script src="/Sitecommunautaire/public/js/wow.min.js"></script>
+
+<script src="/Sitecommunautaire/public/js/custom.js"></script>
+<script src="/Sitecommunautaire/public/js/contactform.js"></script>-->
+
+{% endblock %}
+{% block js %}{% endblock %}
+</body>
+
+</html>
