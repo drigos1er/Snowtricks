@@ -183,7 +183,7 @@ a:focus {
 
 
 #loaderInner {
-    background:#ffffff url(/Snowtricks/public/img/spinner.gif) center center no-repeat;
+    background:#ffffff url(/img/spinner.gif) center center no-repeat;
     height: 60px;
     left: 50%;
     margin: -50px 0 0 -50px;
@@ -310,7 +310,7 @@ hr {
 .intro {
     width:100%;
     position:relative;
-    background: url(/Snowtricks/public/img/bg1.jpg) no-repeat top center;
+    background: url(/img/bg1.jpg) no-repeat top center;
     background-size: cover;
     height: auto;
 }
@@ -587,7 +587,7 @@ Parallax
 ============================= */
 
 #parallax1{
-    background-image: url(/Snowtricks/public/img/bg10.jpg);
+    background-image: url(/img/bg10.jpg);
 }
 
 #parallax1:after {
@@ -604,7 +604,7 @@ Parallax
 
 
 #parallax2{
-    background-image: url(/Snowtricks/public/img/bg12.jpg);
+    background-image: url(/img/bg12.jpg);
 
 }
 
