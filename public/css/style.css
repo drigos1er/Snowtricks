@@ -310,7 +310,7 @@ hr {
 .intro {
     width:100%;
     position:relative;
-    background: url(/img/bg1.jpg) no-repeat top center;
+    background: url(https://cdn.pixabay.com/photo/2018/09/11/09/25/snowboard-3668971_960_720.jpg) no-repeat top center;
     background-size: cover;
     height: auto;
 }
