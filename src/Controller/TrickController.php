@@ -80,7 +80,7 @@ class TrickController extends AbstractController
         $form= $this->createForm(TricksType::class, $trick);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // Parcourir er ajouter d'eventuelle images et videos
+            // Parcourir et ajouter d'eventuelle images et videos
             foreach ($trick->getImage() as $image) {
                 $image->setTricks($trick);
                 $manager->persist($image);
