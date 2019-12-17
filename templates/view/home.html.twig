@@ -46,26 +46,67 @@
                     <div class="row">
                         {% set i = 0 %}
                         {% for trick in tricks %}
-                        {% for img in trick.image %}
-                            {% if loop.first %}
-                        <div class="col-md-3">
-                            <div class="wow bounceInUp" data-wow-delay="0.2s">
-                                <div class="team boxed-grey">
-                                    <div class="inner">
 
-                                        <div class="avatar"><img src="{{ img.name}}" alt="" class="img-responsive" /></div>
+                            {% if trick.image|length >0 %}
 
-                                        <a href="{{ path('sitecom_showtrick',{id:trick.id }) }}" style="text-decoration: underline">{{ trick.name }}</a>&nbsp;&nbsp;&nbsp;
-                                        {% if app.user and app.user==trick.authenticateduser %}
-                                            <a href="{{ path('sitecom_edittrick',{id:trick.id }) }}" title="Modifier">  <i class="fa  fa-pencil" style="color: orange"></i></a>&nbsp;&nbsp;
-                                            <a href="{{ path('sitecom_deletetrick',{id:trick.id }) }}"  onclick="return confirm('Êtes vous sûr de vouloir supprimer la figure :{{ trick.name }} ?')" title="Supprimer">  <i class="fa fa-trash-o" style="color: red"></i></a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                            {% endif %} {% endfor %}
+                                {% for img in trick.image %}
+                                    {% if loop.first %}
+                                        <div class="col-md-3">
+                                            <div class="wow bounceInUp" data-wow-delay="0.2s">
+                                                <div class="team boxed-grey">
+                                                    <div class="inner">
+
+                                                        <div class="avatar"><img src="{{ img.name}}" alt="" class="img-responsive" style="width: 250px; height: 100px; " /></div>
+
+                                                        <a href="{{ path('sitecom_showtrick',{id:trick.id }) }}" style="text-decoration: underline">{{ trick.name }}</a>&nbsp;&nbsp;&nbsp;
+                                                        {% if app.user and app.user==trick.authenticateduser %}
+                                                            <a href="{{ path('sitecom_edittrick',{id:trick.id }) }}" title="Modifier">  <i class="fa  fa-pencil" style="color: orange"></i></a>&nbsp;&nbsp;
+                                                            <a href="{{ path('sitecom_deletetrick',{id:trick.id }) }}"  onclick="return confirm('Êtes vous sûr de vouloir supprimer la figure :{{ trick.name }} ?')" title="Supprimer">  <i class="fa fa-trash-o" style="color: red"></i></a>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %} {% endfor %}
+
+                             {% else %}
+
+
+
+                                 <div class="col-md-3">
+                                     <div class="wow bounceInUp" data-wow-delay="0.2s">
+                                         <div class="team boxed-grey">
+                                             <div class="inner">
+
+                                                 <div class="avatar"><img src="https://cdn.pixabay.com/photo/2017/06/09/10/04/males-2386403_960_720.jpg" alt="" class="img-responsive"  style="width: 250px; height: 100px; "/></div>
+
+                                                 <a href="{{ path('sitecom_showtrick',{id:trick.id }) }}" style="text-decoration: underline">{{ trick.name }}</a>&nbsp;&nbsp;&nbsp;
+                                                 {% if app.user and app.user==trick.authenticateduser %}
+                                                     <a href="{{ path('sitecom_edittrick',{id:trick.id }) }}" title="Modifier">  <i class="fa  fa-pencil" style="color: orange"></i></a>&nbsp;&nbsp;
+                                                     <a href="{{ path('sitecom_deletetrick',{id:trick.id }) }}"  onclick="return confirm('Êtes vous sûr de vouloir supprimer la figure :{{ trick.name }} ?')" title="Supprimer">  <i class="fa fa-trash-o" style="color: red"></i></a>
+                                                 {% endif %}
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+
+
+
+                            {% endif %}
+
+
+
+
                             {% set i= i + 1 %}
+
+
+
+
+
+
+
+
+
 
                         {% endfor %}
                         <br><br><br>

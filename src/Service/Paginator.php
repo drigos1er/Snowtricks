@@ -8,7 +8,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 class Paginator
 {
           private $entityClass;
-          private $limit=10;
+          private $limit=12;
           private $currentPage;
           private $manager;
 
