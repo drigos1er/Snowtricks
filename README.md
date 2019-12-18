@@ -1,1 +1,31 @@
 # SiteCommunautaire
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c6504ce5b8e54b01bdc0f9751558179e)](https://www.codacy.com/manual/drigos1er/Snowtricks?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=drigos1er/Snowtricks&amp;utm_campaign=Badge_Grade)
