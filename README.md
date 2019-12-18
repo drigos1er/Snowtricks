@@ -1,8 +1,8 @@
-# SiteCommunautaire
+# SiteCommunautaire- Snowtricks
 
 
 
-Ceci est mon Blog personnel développé en PHP orienté objet me basant sur le design pattern MVC.
+Cette application est une plateforme collaborative et de partage  destinée aux amateurs de Surf .
 
 
 # Installation de mon application
